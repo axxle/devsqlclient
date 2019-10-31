@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SVGBoard</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.bss_dbo_org_CredPreOffer {  background-color: Chartreuse; }
+		.bss_dbo_org_QuestionForm {  background-color: SpringGreen; }
+	</style>
+</head>
+<body id="v_body">
+
+<svg version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+	 width="1920" height="908" viewBox="0 0 1920 908" id = "svgboard">
+	
+<svg x="0" y="0" width="30000" height="50000" viewBox="0 0 30000 50000">
+		<foreignObject x="0" y="0" width="30000" height="50000">
+		<textarea rows="10" cols="45" name="text" id="form_firstTT">select * from DOCUMENT where ROWNUM <=10</textarea>
+		<br><input type="button" onclick="execAndDraw('firstTT')" value="Выполнить запрос">
+		<table id="firstTT"></table>
+		</foreignObject>
+	</svg>
+	<!-- Последний слой, чтобы двигалась борда а не элементы. Я называю ее "Витрина". Блин, ссылки так тоже перестают работать. Не пойдет, видимо надо крыть только сами изображения, или меня их дефолтное поведение (или как это называется). Есть еще вариант не вставлять изображения - это подходит для кода из IDEA, там можно импортировать, но будут и просто изображения. Есть вариант завернуть в бэкграунд дива - надо попробовать. Опять идея - забить клавишу (например Alt), по нажитю на которую "Витрина" будет убираться 
+	<svg x="0" y="0" width="30000" height="50000" viewBox="0 0 30000 50000">
+		<rect x="0" y="0" width="30000" height="50000" stroke="green" stroke-width="2px" fill="#0000ff00" />
+	</svg>-->
+</svg>
+<script lang="JavaScript">
+
+</script>
+<script src="svgboard.js"></script>
+<script src="sqltools.js"></script>
+</body>
+</html>

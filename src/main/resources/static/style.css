@@ -1,0 +1,37 @@
+
+	#v_body {
+		margin:0 0 0 0;
+		overflow:hidden !important;
+	}
+	#menu {width:100%; height:30px; background:#4E729A;margin:0 auto 0;}
+	
+	#col1_id {width:150px; height:30px;}
+	
+table {  
+  border: 2px solid black;
+  border-collapse: collapse;
+  vertical-align: bottom;
+  font-family: "Arial Narrow", Arial, sans-serif; 
+  font-size: 14px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 15px;
+}
+td {
+  border: 1px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: left;
+}
+.tableHeader {
+  text-align: center;
+}
+.colName {}
+.colType {
+  font-size: 12px;
+}
+
+.element {
+  border: 1px solid black;
+}
