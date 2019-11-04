@@ -1,8 +1,7 @@
-
-var execAndDraw = function execAndDraw(tableID, query){
+var execAndDraw = function execAndDraw(formID, tableID){
 	var request = new XMLHttpRequest();
 	request.open('POST', "/sql2", true);
-	request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');//'text/plain'); //'application/json');
+	request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
 	request.responseType =	"json";
 	request.addEventListener("readystatechange", () => {
 		{
@@ -12,13 +11,8 @@ var execAndDraw = function execAndDraw(tableID, query){
 			}
 		}
 	});
-	console.log("query = " + query);
-	//var query2 = "select * from DOCUMENT where ROWNUM <=3"
-	var query2 = document.getElementById('form_firstTT').value;
-	//var data = new FormData();
-	//data.append('sqlQuery', query2);
-	//request.send(data);
-	request.send(query2);
+	var query = document.getElementById(formID).value;
+	request.send(query);
 }
 
 var drawTableObj = function drawTableObj(tableID, tableObj){
@@ -42,21 +36,4 @@ var drawTableObj = function drawTableObj(tableID, tableObj){
 		newCell.appendChild(newText);
 	  }
   }
-}
-
-
-var execAndDraw0 = function execAndDraw0(tableID, query){
-	var request = new XMLHttpRequest();
-	request.open('GET', "/sqlexec/");
-	request.setRequestHeader('Content-Type', 'application/json');
-	request.responseType =	"json";
-	request.addEventListener("readystatechange", () => {
-		{
-			if (request.readyState === 4 && request.status === 200) {
-			  var result = request.response;
-			  drawTableObj(tableID, result);
-			}
-		}
-	});
-	request.send();
 }

@@ -20,9 +20,19 @@
 	
 <svg x="0" y="0" width="30000" height="50000" viewBox="0 0 30000 50000">
 		<foreignObject x="0" y="0" width="30000" height="50000">
-		<textarea rows="10" cols="45" name="text" id="form_firstTT">select * from DOCUMENT where ROWNUM <=10</textarea>
-		<br><input type="button" onclick="execAndDraw('firstTT')" value="Выполнить запрос">
-		<table id="firstTT"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT10">SELECT table_name FROM information_schema.tables where table_schema='ruzilya'</textarea><br><input type="button" onclick="execAndDraw('form_firstTT10', 'firstTT10')" value="Выполнить запрос"><table id="firstTT10"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT11">select * from wp_commentmeta</textarea><br><input type="button" onclick="execAndDraw('form_firstTT11', 'firstTT11')" value="Выполнить запрос"><table id="firstTT11"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT12">select * from wp_comments</textarea><br><input type="button" onclick="execAndDraw('form_firstTT12', 'firstTT12')" value="Выполнить запрос"><table id="firstTT12"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT13">select * from wp_links</textarea><br><input type="button" onclick="execAndDraw('form_firstTT13', 'firstTT13')" value="Выполнить запрос"><table id="firstTT13"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT14">select * from wp_options</textarea><br><input type="button" onclick="execAndDraw('form_firstTT14', 'firstTT14')" value="Выполнить запрос"><table id="firstTT14"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT15">select * from wp_postmeta</textarea><br><input type="button" onclick="execAndDraw('form_firstTT15', 'firstTT15')" value="Выполнить запрос"><table id="firstTT15"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT16">select * from wp_posts</textarea><br><input type="button" onclick="execAndDraw('form_firstTT16', 'firstTT16')" value="Выполнить запрос"><table id="firstTT16"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT17">select * from wp_termmeta</textarea><br><input type="button" onclick="execAndDraw('form_firstTT17', 'firstTT17')" value="Выполнить запрос"><table id="firstTT17"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT18">select * from wp_terms</textarea><br><input type="button" onclick="execAndDraw('form_firstTT18', 'firstTT18')" value="Выполнить запрос"><table id="firstTT18"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT19">select * from wp_term_relationships</textarea><br><input type="button" onclick="execAndDraw('form_firstTT19', 'firstTT19')" value="Выполнить запрос"><table id="firstTT19"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT20">select * from wp_term_taxonomy</textarea><br><input type="button" onclick="execAndDraw('form_firstTT20', 'firstTT20')" value="Выполнить запрос"><table id="firstTT20"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT21">select * from wp_usermeta</textarea><br><input type="button" onclick="execAndDraw('form_firstTT21', 'firstTT21')" value="Выполнить запрос"><table id="firstTT21"></table>
+		<textarea rows="10" cols="45" name="text" id="form_firstTT22">select * from wp_users</textarea><br><input type="button" onclick="execAndDraw('form_firstTT22', 'firstTT22')" value="Выполнить запрос"><table id="firstTT22"></table>
 		</foreignObject>
 	</svg>
 	<!-- Последний слой, чтобы двигалась борда а не элементы. Я называю ее "Витрина". Блин, ссылки так тоже перестают работать. Не пойдет, видимо надо крыть только сами изображения, или меня их дефолтное поведение (или как это называется). Есть еще вариант не вставлять изображения - это подходит для кода из IDEA, там можно импортировать, но будут и просто изображения. Есть вариант завернуть в бэкграунд дива - надо попробовать. Опять идея - забить клавишу (например Alt), по нажитю на которую "Витрина" будет убираться 
