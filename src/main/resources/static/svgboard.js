@@ -1,4 +1,5 @@
 var SVG_BOARD_ID = "svgboard";	
+var MOUSE_SELECTION_DISABLE = false;	
 var scaleRates = [
 	12,
 	10,
@@ -79,16 +80,18 @@ document.onwheel = function(e) {
 /*Обработка перетаскивания полотна доски*/
 var svgBoardObject = document.getElementById(SVG_BOARD_ID);
 svgBoardObject.onmousedown = function(event) {
-	var mouseDownXY = [event.clientX, event.clientY];
-	var mouseDownVBvalues = getViewBoxValues(SVG_BOARD_ID);
-	document.onmousemove = function(e) {
-		var mouseMoveXY = [e.clientX, e.clientY];
-		var moveViewBox = calcMouseMove(mouseDownVBvalues, mouseDownXY, mouseMoveXY, currentScaleIndex);
-		setViewBoxValues(SVG_BOARD_ID, moveViewBox);
-	}
-	svgBoardObject.onmouseup = function(e) {
-		document.onmousemove = null;
-		svgBoardObject.onmouseup = null;
+	if (MOUSE_SELECTION_DISABLE) {
+		var mouseDownXY = [event.clientX, event.clientY];
+		var mouseDownVBvalues = getViewBoxValues(SVG_BOARD_ID);
+		document.onmousemove = function(e) {
+			var mouseMoveXY = [e.clientX, e.clientY];
+			var moveViewBox = calcMouseMove(mouseDownVBvalues, mouseDownXY, mouseMoveXY, currentScaleIndex);
+			setViewBoxValues(SVG_BOARD_ID, moveViewBox);
+		}
+		svgBoardObject.onmouseup = function(e) {
+			document.onmousemove = null;
+			svgBoardObject.onmouseup = null;
+		}
 	}
 }
 
@@ -159,3 +162,18 @@ function getScaleValues(wheelDelta, mouseX, mouseY) {
 	currentScaleIndex = nextScaleIndex;
 	return shiftedArr;
 }
+
+document.addEventListener('keydown', function(event) {
+  //if (event.code == 'KeyE' && (event.ctrlKey || event.metaKey)) {
+    //alert('Можете копировать содержимое выделением!')
+  //}
+  //console.log("event.keyCode = " + event.keyCode + " event.ctrlKey = " + event.ctrlKey + " event.shiftKey = " + event.shiftKey);
+  if (event.keyCode == 69 && event.shiftKey) {
+	  if (MOUSE_SELECTION_DISABLE) {
+		  MOUSE_SELECTION_DISABLE = false;
+	  } else {
+		  MOUSE_SELECTION_DISABLE = true;
+	  }
+	  //alert("сейчас MOUSE_SELECTION_DISABLE = " + MOUSE_SELECTION_DISABLE);
+  }
+});
